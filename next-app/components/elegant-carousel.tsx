@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import '../../index.css';
+import './elegant-carousel.css';
 
 interface SlideData {
   title: string;
@@ -12,40 +12,28 @@ interface SlideData {
 
 const slides: SlideData[] = [
   {
-    title: 'Venetian Dusk',
-    subtitle: 'Autumn / Winter Collection',
+    title: 'Enhance Your Skills',
+    subtitle: 'Workshops & Training',
     description:
-      'Where ancient architecture meets the dying light — a palette drawn from terracotta, aged stone, and the shimmering canals of Venice at twilight.',
-    accent: '#C4956A',
-    imageUrl:
-      'https://images.unsplash.com/photo-1534113414509-0eec2bfb493f?w=900&h=1200&fit=crop&q=80',
+      'Our club offers a wide range of resources and workshops designed to elevate your cybersecurity knowledge and practical skills.',
+    accent: '#C9C73C',
+    imageUrl: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900&h=1200&fit=crop&q=80',
   },
   {
-    title: 'Nordic Silence',
-    subtitle: 'Spring / Summer Collection',
+    title: 'Compete and Collaborate',
+    subtitle: 'CTF Competitions',
     description:
-      'Inspired by the vast stillness of Scandinavian fjords — clean lines, muted tones, and the quiet power of unadorned beauty.',
-    accent: '#8BA7B8',
-    imageUrl:
-      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&h=1200&fit=crop&q=80',
+      'Participate in thrilling CTF competitions and collaborate with fellow members to solve real-world cybersecurity challenges.',
+    accent: '#C9C73C',
+    imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&h=1200&fit=crop&q=80',
   },
   {
-    title: 'Kyoto Garden',
-    subtitle: 'Resort Collection',
+    title: 'Access Valuable Resources',
+    subtitle: 'Tutorials & Guides',
     description:
-      'Moss-covered pathways and paper lanterns — an ode to the meditative elegance of Japanese garden design and its timeless restraint.',
-    accent: '#7A9E7E',
-    imageUrl:
-      'https://images.unsplash.com/photo-1528164344705-47542687000d?w=900&h=1200&fit=crop&q=80',
-  },
-  {
-    title: 'Saharan Gold',
-    subtitle: 'Capsule Collection',
-    description:
-      'The desert reveals its secrets at dawn — liquid gold spilling across endless dunes, textures carved by centuries of wind and time.',
-    accent: '#D4A955',
-    imageUrl:
-      'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=900&h=1200&fit=crop&q=80',
+      'Gain access to exclusive tutorials, tools, and guides that will empower you in your cybersecurity journey.',
+    accent: '#C9C73C',
+    imageUrl: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900&h=1200&fit=crop&q=80',
   },
 ];
 
