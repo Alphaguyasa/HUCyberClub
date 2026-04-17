@@ -26,8 +26,8 @@ export default function InteractiveHero() {
           {/* Center - Navigation */}
           <nav className="hidden lg:flex gap-6">
             <a href="#home" className="font-medium pb-1 transition-all" style={{ color: '#111111', borderBottom: '2px solid #111111', fontSize: '15px' }}>Home</a>
-            <a href="#about" className="pb-1 transition-all hover:opacity-70" style={{ color: '#111111', fontSize: '15px' }}>About</a>
-            <a href="#resources" className="pb-1 transition-all hover:opacity-70" style={{ color: '#111111', fontSize: '15px' }}>Resources</a>
+            <a href="/about" className="pb-1 transition-all hover:opacity-70" style={{ color: '#111111', fontSize: '15px' }}>About</a>
+            <a href="/resources" className="pb-1 transition-all hover:opacity-70" style={{ color: '#111111', fontSize: '15px' }}>Resources</a>
             <a href="#events" className="pb-1 transition-all hover:opacity-70" style={{ color: '#111111', fontSize: '15px' }}>Events</a>
             <a href="#contact" className="pb-1 transition-all hover:opacity-70" style={{ color: '#111111', fontSize: '15px' }}>Contact</a>
           </nav>
@@ -65,7 +65,7 @@ export default function InteractiveHero() {
           <p className="uppercase tracking-widest mb-6 font-medium" style={{ color: '#111111', fontSize: '20px' }}>
             Empowering Cyber Defenders
           </p>
-          <h1 className="font-bold mb-8 leading-tight" style={{ color: '#111111', fontSize: '56px' }}>
+          <h1 className="font-bold mb-8 leading-tight whitespace-nowrap" style={{ color: '#111111', fontSize: '56px' }}>
             Join Us in Securing the Digital World
           </h1>
           <p className="mx-auto mb-12 leading-relaxed" style={{ color: '#111111', fontSize: '20px', maxWidth: '700px' }}>
