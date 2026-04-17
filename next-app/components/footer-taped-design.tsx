@@ -18,7 +18,7 @@ export const Component = () => {
 
   return (
     <footer className={`w-full py-10 ${spectral.className}`} style={{ backgroundColor: '#FFFEF0' }}>
-      <div className="relative bg-white rounded-3xl max-w-2xl mx-auto px-8 py-10 flex flex-col items-center gap-6">
+      <div className="relative bg-white rounded-3xl max-w-2xl mx-auto px-6 py-10 flex flex-col items-center gap-6">
         {/* Tape decorations */}
         <div className="hidden md:block absolute -top-4 -left-8 w-[80px] h-[36px] scale-75">
           {tape}

@@ -39,7 +39,7 @@ export default function OurMission() {
     <section className={`w-full py-20 px-6 ${spectral.className}`} style={{ backgroundColor: '#FFFEF0' }}>
       <div className="max-w-7xl mx-auto">
         {/* Single layout: swiper + text */}
-        <div className="flex flex-col md:flex-row items-center gap-16">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           {/* Image Swiper */}
           <div className="flex-shrink-0 relative">
             <ImageSwiper

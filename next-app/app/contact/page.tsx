@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Spectral } from "next/font/google";
 import { Component as Footer } from "@/components/footer-taped-design";
+import Navbar from "@/components/navbar";
 
 const spectral = Spectral({
   weight: ["300", "400", "600", "700"],
@@ -28,47 +29,17 @@ export default function ContactPage() {
 
   return (
     <div className={`relative ${spectral.className}`}>
-
-      {/* Header */}
-      <header className="w-full fixed top-0 z-[100] transition-all duration-300" style={{ backgroundColor: scrolled ? 'rgb(80, 85, 92)' : 'transparent', boxShadow: scrolled ? '0 1px 8px rgba(0,0,0,0.08)' : 'none' }}>
-        <div className="max-w-full px-8 py-6 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <img src="/images/cyberc.jpg" alt="Logo" className="w-12 h-12 rounded-lg shadow-md object-cover" />
-            <span className="font-semibold text-base" style={{ color: '#ffffff' }}>
-              Haramaya University Cyber Security Club
-            </span>
-          </div>
-          <nav className="hidden lg:flex gap-6">
-            {["Home", "About", "Resources", "Events", "Contact"].map((item) => (
-              <Link key={item}
-                href={item === "Home" ? "/" : item === "About" ? "/about" : item === "Resources" ? "/resources" : item === "Events" ? "/events" : "/contact"}
-                className="pb-1 transition-all hover:opacity-70"
-                style={{ color: '#ffffff', fontSize: '15px', borderBottom: item === "Contact" ? `2px solid #ffffff` : 'none', fontWeight: item === "Contact" ? 600 : 400 }}
-              >{item}</Link>
-            ))}
-          </nav>
-          <div className="flex items-center gap-4">
-            <div className="hidden md:flex gap-3">
-              {socialPaths.map((path, i) => (
-                <a key={i} href="#" className="w-9 h-9 rounded-full flex items-center justify-center transition-opacity hover:opacity-80" style={{ backgroundColor: '#111111' }}>
-                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d={path} /></svg>
-                </a>
-              ))}
-            </div>
-            <button className="text-white px-6 py-2 font-medium transition-opacity hover:opacity-90" style={{ backgroundColor: '#d2d076', borderRadius: '9999px', fontSize: '16px' }}>Join Us</button>
-          </div>
-        </div>
-      </header>
+      <Navbar activeItem="Contact" transparent={true} />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-4 text-center" style={{ zIndex: 1 }}>
         <img src="/images/contactus.jpg" alt="Contact Us" className="absolute inset-0 w-full h-full object-cover" style={{ zIndex: 0 }} />
         <div className="absolute inset-0" style={{ backgroundColor: 'rgba(0,0,0,0.55)', zIndex: 0 }} />
         <div className="relative z-10 max-w-3xl mx-auto">
-          <h1 className="mb-6" style={{ fontSize: '42px', color: '#ffffff', fontWeight: 400 }}>
+          <h1 className="mb-6" style={{ fontSize: 'clamp(24px, 4vw, 42px)', color: '#ffffff', fontWeight: 400 }}>
             Stay Connected with Us
           </h1>
-          <p className="mb-10" style={{ fontSize: '18px', color: '#f0f0f0', fontWeight: 300 }}>
+          <p className="mb-10" style={{ fontSize: 'clamp(14px, 2vw, 18px)', color: '#f0f0f0', fontWeight: 300 }}>
             Follow our social media channels to get the latest updates, event announcements, and cybersecurity insights. Engage with our community and share your thoughts!
           </p>
           <button className="px-10 py-4 font-medium transition-opacity hover:opacity-90 shadow-lg" style={{ backgroundColor: '#C9C73C', color: '#1D2023', borderRadius: '9999px', fontSize: '18px' }}>
@@ -87,7 +58,7 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
 
             {/* Form */}
             <form className="flex flex-col text-sm">

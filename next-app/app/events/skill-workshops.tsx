@@ -54,7 +54,7 @@ export default function SkillWorkshops() {
         {/* Cards */}
         <div className="flex flex-col gap-16">
           {workshopData.items.map((item, index) => (
-            <div key={item.id} className="flex flex-col md:flex-row items-center gap-12">
+            <div key={item.id} className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
               {/* Image */}
               <div className="w-full md:w-1/2">
                 <img src={item.image} alt={item.title} className="w-full h-auto rounded-2xl shadow-xl object-cover" />
