@@ -36,7 +36,7 @@ export default function ResourcesPage() {
       <header
         className="w-full fixed top-0 z-50 transition-all duration-300"
         style={{
-          backgroundColor: scrolled ? '#FEFB8F' : 'transparent',
+          backgroundColor: scrolled ? 'rgb(80, 85, 92)' : 'transparent',
           boxShadow: scrolled ? '0 1px 8px rgba(0,0,0,0.08)' : 'none',
         }}
       >
@@ -52,12 +52,12 @@ export default function ResourcesPage() {
             {["Home", "About", "Resources", "Events", "Contact"].map((item) => (
               <Link
                 key={item}
-                href={item === "Home" ? "/" : item === "About" ? "/about" : item === "Resources" ? "/resources" : `/#${item.toLowerCase()}`}
+                href={item === "Home" ? "/" : item === "About" ? "/about" : item === "Resources" ? "/resources" : item === "Events" ? "/events" : "/contact"}
                 className="pb-1 transition-all hover:opacity-70"
                 style={{
-                  color: scrolled ? '#111111' : '#ffffff',
+                  color: scrolled ? '#ffffff' : '#ffffff',
                   fontSize: '15px',
-                  borderBottom: item === "Resources" ? `2px solid ${scrolled ? '#111111' : '#ffffff'}` : 'none',
+                  borderBottom: item === "Resources" ? `2px solid ${scrolled ? '#ffffff' : '#ffffff'}` : 'none',
                   fontWeight: item === "Resources" ? 600 : 400,
                 }}
               >
@@ -96,7 +96,7 @@ export default function ResourcesPage() {
             Unlock a wealth of knowledge and tools to enhance your cybersecurity skills.
           </p>
           <div className="flex gap-4 justify-center">
-            <Link href="#resources">
+            <Link href="/resources/library">
               <button className="text-white px-10 py-4 font-medium transition-opacity hover:opacity-90 shadow-lg" style={{ backgroundColor: '#111111', borderRadius: '9999px', fontSize: '18px' }}>
                 Browse Resources
               </button>

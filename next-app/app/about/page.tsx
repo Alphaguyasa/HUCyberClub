@@ -30,7 +30,7 @@ export default function AboutPage() {
       <header
         className="w-full fixed top-0 z-50 transition-all duration-300"
         style={{
-          backgroundColor: scrolled ? '#FEFB8F' : 'transparent',
+          backgroundColor: scrolled ? 'rgb(80, 85, 92)' : 'transparent',
           boxShadow: scrolled ? '0 1px 8px rgba(0,0,0,0.08)' : 'none',
         }}
       >
@@ -46,12 +46,12 @@ export default function AboutPage() {
             {["Home", "About", "Resources", "Events", "Contact"].map((item) => (
               <Link
                 key={item}
-                href={item === "Home" ? "/" : item === "About" ? "/about" : `/#${item.toLowerCase()}`}
+                href={item === "Home" ? "/" : item === "About" ? "/about" : item === "Resources" ? "/resources" : item === "Events" ? "/events" : "/contact"}
                 className="pb-1 transition-all hover:opacity-70"
                 style={{
-                  color: scrolled ? '#111111' : '#ffffff',
+                  color: scrolled ? '#ffffff' : '#ffffff',
                   fontSize: '15px',
-                  borderBottom: item === "About" ? `2px solid ${scrolled ? '#111111' : '#ffffff'}` : 'none',
+                  borderBottom: item === "About" ? `2px solid ${scrolled ? '#ffffff' : '#ffffff'}` : 'none',
                   fontWeight: item === "About" ? 600 : 400,
                 }}
               >

@@ -1,4 +1,5 @@
-import React from 'react';
+"use client";
+import React, { useEffect, useState } from 'react';
 import { Spectral } from 'next/font/google';
 
 const spectral = Spectral({ 
@@ -8,10 +9,18 @@ const spectral = Spectral({
 });
 
 export default function InteractiveHero() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className={`min-h-screen ${spectral.className}`} style={{ backgroundColor: '#FEFB8F' }}>
+    <div className={`min-h-screen ${spectral.className}`} style={{ backgroundColor: 'rgb(80, 85, 92)' }}>
       {/* Header / Navigation */}
-      <header className="w-full shadow-sm sticky top-0 z-50" style={{ backgroundColor: '#FEFB8F' }}>
+      <header className="w-full fixed top-0 z-50 transition-all duration-300" style={{ backgroundColor: scrolled ? 'rgb(80, 85, 92)' : 'transparent', boxShadow: scrolled ? '0 1px 8px rgba(0,0,0,0.08)' : 'none' }}>
         <div className="max-w-full px-8 py-6 flex items-center justify-between">
           {/* Left - Branding */}
           <div className="flex items-center gap-3">
@@ -20,16 +29,16 @@ export default function InteractiveHero() {
               alt="Haramaya University Cyber Security Club Logo" 
               className="w-12 h-12 rounded-lg shadow-md object-cover"
             />
-            <span className="font-semibold text-base" style={{ color: '#111111' }}>Haramaya University Cyber Security Club</span>
+            <span className="font-semibold text-base" style={{ color: '#ffffff' }}>Haramaya University Cyber Security Club</span>
           </div>
 
           {/* Center - Navigation */}
           <nav className="hidden lg:flex gap-6">
-            <a href="#home" className="font-medium pb-1 transition-all" style={{ color: '#111111', borderBottom: '2px solid #111111', fontSize: '15px' }}>Home</a>
-            <a href="/about" className="pb-1 transition-all hover:opacity-70" style={{ color: '#111111', fontSize: '15px' }}>About</a>
-            <a href="/resources" className="pb-1 transition-all hover:opacity-70" style={{ color: '#111111', fontSize: '15px' }}>Resources</a>
-            <a href="/events" className="pb-1 transition-all hover:opacity-70" style={{ color: '#111111', fontSize: '15px' }}>Events</a>
-            <a href="#contact" className="pb-1 transition-all hover:opacity-70" style={{ color: '#111111', fontSize: '15px' }}>Contact</a>
+            <a href="/" className="font-medium pb-1 transition-all" style={{ color: '#ffffff', borderBottom: '2px solid #ffffff', fontSize: '15px' }}>Home</a>
+            <a href="/about" className="pb-1 transition-all hover:opacity-70" style={{ color: '#ffffff', fontSize: '15px' }}>About</a>
+            <a href="/resources" className="pb-1 transition-all hover:opacity-70" style={{ color: '#ffffff', fontSize: '15px' }}>Resources</a>
+            <a href="/events" className="pb-1 transition-all hover:opacity-70" style={{ color: '#ffffff', fontSize: '15px' }}>Events</a>
+            <a href="/contact" className="pb-1 transition-all hover:opacity-70" style={{ color: '#ffffff', fontSize: '15px' }}>Contact</a>
           </nav>
 
           {/* Right - Social & CTA */}
@@ -59,40 +68,44 @@ export default function InteractiveHero() {
       </header>
 
       {/* Hero Section */}
-      <section className="w-full px-6 py-20 text-center min-h-screen flex flex-col justify-center">
-        <div className="max-w-4xl mx-auto">
+      <section className="w-full px-6 py-20 text-center min-h-screen flex flex-col justify-center relative overflow-hidden">
+        {/* Background Video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        >
+          <source src="/images/5377517-uhd_3840_2160_25fps.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay */}
+        <div className="absolute inset-0 z-0" style={{ backgroundColor: 'rgba(0,0,0,0.55)' }} />
+
+        <div className="max-w-4xl mx-auto relative z-10">
           {/* Headlines */}
-          <p className="uppercase tracking-widest mb-6 font-medium" style={{ color: '#111111', fontSize: '20px' }}>
+          <p className="uppercase tracking-widest mb-6 font-medium" style={{ color: '#ffffff', fontSize: '20px' }}>
             Empowering Cyber Defenders
           </p>
-          <h1 className="font-bold mb-8 leading-tight whitespace-nowrap" style={{ color: '#111111', fontSize: '56px' }}>
+          <h1 className="font-bold mb-8 leading-tight whitespace-nowrap" style={{ color: '#ffffff', fontSize: '56px' }}>
             Join Us in Securing the Digital World
           </h1>
-          <p className="mx-auto mb-12 leading-relaxed" style={{ color: '#111111', fontSize: '20px', maxWidth: '700px' }}>
+          <p className="mx-auto mb-12 leading-relaxed" style={{ color: '#f0f0f0', fontSize: '20px', maxWidth: '700px' }}>
             Our club focuses on enhancing cybersecurity skills through learning and hands-on practice.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex gap-5 justify-center mb-20">
-            <button className="text-white px-10 py-4 font-medium transition-opacity hover:opacity-90 shadow-lg" style={{ backgroundColor: '#111111', borderRadius: '9999px', fontSize: '18px' }}>
+            <a href="/contact" className="text-white px-10 py-4 font-medium transition-opacity hover:opacity-90 shadow-lg" style={{ backgroundColor: '#111111', borderRadius: '9999px', fontSize: '18px' }}>
               Contact Us
-            </button>
-            <button className="px-10 py-4 font-medium transition-opacity hover:opacity-90" style={{ backgroundColor: 'transparent', border: '2px solid #111111', color: '#111111', borderRadius: '9999px', fontSize: '18px' }}>
+            </a>
+            <a href="/about" className="px-10 py-4 font-medium transition-opacity hover:opacity-90" style={{ backgroundColor: 'transparent', border: '2px solid #ffffff', color: '#ffffff', borderRadius: '9999px', fontSize: '18px' }}>
               Learn more
-            </button>
-          </div>
-
-          {/* Featured Image */}
-          <div className="w-full mx-auto mb-10">
-            <img 
-              src="/images/image.png" 
-              alt="Cybersecurity illustration" 
-              className="w-full h-auto rounded-2xl shadow-2xl"
-            />
+            </a>
           </div>
 
           {/* Caption */}
-          <p className="font-semibold mt-8" style={{ color: '#111111', fontSize: '24px' }}>
+          <p className="font-semibold mt-8" style={{ color: '#ffffff', fontSize: '24px' }}>
             Fostering a Community of Cybersecurity Enthusiasts.
           </p>
         </div>
