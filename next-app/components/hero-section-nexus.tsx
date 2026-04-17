@@ -28,7 +28,7 @@ export default function InteractiveHero() {
             <a href="#home" className="font-medium pb-1 transition-all" style={{ color: '#111111', borderBottom: '2px solid #111111', fontSize: '15px' }}>Home</a>
             <a href="/about" className="pb-1 transition-all hover:opacity-70" style={{ color: '#111111', fontSize: '15px' }}>About</a>
             <a href="/resources" className="pb-1 transition-all hover:opacity-70" style={{ color: '#111111', fontSize: '15px' }}>Resources</a>
-            <a href="#events" className="pb-1 transition-all hover:opacity-70" style={{ color: '#111111', fontSize: '15px' }}>Events</a>
+            <a href="/events" className="pb-1 transition-all hover:opacity-70" style={{ color: '#111111', fontSize: '15px' }}>Events</a>
             <a href="#contact" className="pb-1 transition-all hover:opacity-70" style={{ color: '#111111', fontSize: '15px' }}>Contact</a>
           </nav>
 
