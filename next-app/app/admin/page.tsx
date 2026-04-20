@@ -6,6 +6,7 @@ import UserManagement from "./user-management";
 import CTFManagement from "./ctf-management";
 import EventManagement from "./event-management";
 import AnalyticsSection from "./analytics-section";
+import BlogManagement from "./blog-management";
 
 const spectral = Spectral({
   weight: ["300", "400", "600", "700"],
@@ -52,6 +53,7 @@ export default function AdminPage() {
       <UserManagement />
       <CTFManagement />
       <EventManagement />
+      <BlogManagement />
       <AnalyticsSection />
     </div>
   );

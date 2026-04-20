@@ -1,12 +1,16 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import LoginPage from '@/components/gaming-login';
 
-function handleLogin(email: string, password: string, remember: boolean) {
-  console.log('Login attempt:', { email, password, remember });
-}
-
 export default function Login() {
+  const router = useRouter();
+
+  function handleLogin(email: string, password: string, remember: boolean) {
+    // TODO: replace with real auth
+    router.push('/dashboard');
+  }
+
   return (
     <div className="relative min-h-screen w-full flex items-center justify-center px-4 py-12">
       <LoginPage.VideoBackground videoUrl="https://videos.pexels.com/video-files/8128311/8128311-uhd_2560_1440_25fps.mp4" />
