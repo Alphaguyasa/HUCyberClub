@@ -7,8 +7,6 @@ import Image from "next/image";
 const navItems = [
   { label: "CTF Dashboard", href: "/dashboard" },
   { label: "Blog", href: "/blog" },
-  { label: "Resources", href: "/resources" },
-  { label: "Events", href: "/events" },
 ];
 
 interface UserNavbarProps {

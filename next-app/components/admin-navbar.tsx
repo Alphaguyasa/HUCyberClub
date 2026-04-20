@@ -9,6 +9,7 @@ const adminNavItems = [
   { label: "User Management", href: "/admin#user-management" },
   { label: "CTF Management", href: "/admin#ctf-management" },
   { label: "Event Management", href: "/admin#event-management" },
+  { label: "Blog Management", href: "/admin#blog-management" },
   { label: "Analytics", href: "/admin#analytics" },
 ];
 
