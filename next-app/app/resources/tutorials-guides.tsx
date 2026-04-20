@@ -50,7 +50,7 @@ export default function TutorialsGuides() {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-10">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-8 md:gap-10 flex-wrap">
           {tutorials.map((tutorial, index) => (
             <div key={index} className="w-full max-w-[320px] h-[450px]">
               <DestinationCard

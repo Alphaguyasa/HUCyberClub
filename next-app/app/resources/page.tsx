@@ -7,6 +7,7 @@ import { Component as Footer } from "@/components/footer-taped-design";
 import TutorialsGuides from "./tutorials-guides";
 import CyberSecurityTools from "./cybersecurity-tools";
 import ResourceLibrary from "./resource-library";
+import Navbar from "@/components/navbar";
 
 const spectral = Spectral({
   weight: ["400", "600", "700"],
@@ -31,57 +32,7 @@ export default function ResourcesPage() {
 
   return (
     <div className={`relative ${spectral.className}`}>
-
-      {/* Header */}
-      <header
-        className="w-full fixed top-0 z-50 transition-all duration-300"
-        style={{
-          backgroundColor: scrolled ? '#FEFB8F' : 'transparent',
-          boxShadow: scrolled ? '0 1px 8px rgba(0,0,0,0.08)' : 'none',
-        }}
-      >
-        <div className="max-w-full px-8 py-6 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <img src="/images/cyberc.jpg" alt="Logo" className="w-12 h-12 rounded-lg shadow-md object-cover" />
-            <span className="font-semibold text-base" style={{ color: scrolled ? '#111111' : '#ffffff' }}>
-              Haramaya University Cyber Security Club
-            </span>
-          </div>
-
-          <nav className="hidden lg:flex gap-6">
-            {["Home", "About", "Resources", "Events", "Contact"].map((item) => (
-              <Link
-                key={item}
-                href={item === "Home" ? "/" : item === "About" ? "/about" : item === "Resources" ? "/resources" : `/#${item.toLowerCase()}`}
-                className="pb-1 transition-all hover:opacity-70"
-                style={{
-                  color: scrolled ? '#111111' : '#ffffff',
-                  fontSize: '15px',
-                  borderBottom: item === "Resources" ? `2px solid ${scrolled ? '#111111' : '#ffffff'}` : 'none',
-                  fontWeight: item === "Resources" ? 600 : 400,
-                }}
-              >
-                {item}
-              </Link>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-4">
-            <div className="hidden md:flex gap-3">
-              {socialPaths.map((path, i) => (
-                <a key={i} href="#" className="w-9 h-9 rounded-full flex items-center justify-center transition-opacity hover:opacity-80" style={{ backgroundColor: '#111111' }}>
-                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d={path} />
-                  </svg>
-                </a>
-              ))}
-            </div>
-            <button className="text-white px-6 py-2 font-medium transition-opacity hover:opacity-90" style={{ backgroundColor: '#d2d076', borderRadius: '9999px', fontSize: '16px' }}>
-              Join Us
-            </button>
-          </div>
-        </div>
-      </header>
+      <Navbar activeItem="Resources" transparent={true} />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-4 text-center">
@@ -89,14 +40,14 @@ export default function ResourcesPage() {
         <div className="absolute inset-0" style={{ backgroundColor: 'rgba(0,0,0,0.55)' }} />
 
         <div className="relative z-10 max-w-4xl mx-auto">
-          <h1 className="mb-6" style={{ fontSize: '42px', color: '#ffffff', fontWeight: 400 }}>
+          <h1 className="mb-6" style={{ fontSize: 'clamp(24px, 4vw, 42px)', color: '#ffffff', fontWeight: 400 }}>
             Explore Our Resources
           </h1>
-          <p className="mb-10" style={{ fontSize: '18px', color: '#f0f0f0', fontWeight: 300 }}>
+          <p className="mb-10" style={{ fontSize: 'clamp(14px, 2vw, 18px)', color: '#f0f0f0', fontWeight: 300 }}>
             Unlock a wealth of knowledge and tools to enhance your cybersecurity skills.
           </p>
           <div className="flex gap-4 justify-center">
-            <Link href="#resources">
+            <Link href="/resources/library">
               <button className="text-white px-10 py-4 font-medium transition-opacity hover:opacity-90 shadow-lg" style={{ backgroundColor: '#111111', borderRadius: '9999px', fontSize: '18px' }}>
                 Browse Resources
               </button>

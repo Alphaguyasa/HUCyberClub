@@ -17,7 +17,7 @@ const slides: SlideData[] = [
     description:
       'Our club offers a wide range of resources and workshops designed to elevate your cybersecurity knowledge and practical skills.',
     accent: '#C9C73C',
-    imageUrl: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900&h=1200&fit=crop&q=80',
+    imageUrl: '/images/enhanceyourskills.jpg',
   },
   {
     title: 'Compete and Collaborate',
@@ -25,7 +25,7 @@ const slides: SlideData[] = [
     description:
       'Participate in thrilling CTF competitions and collaborate with fellow members to solve real-world cybersecurity challenges.',
     accent: '#C9C73C',
-    imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&h=1200&fit=crop&q=80',
+    imageUrl: '/images/hackatoncompete.jpg',
   },
   {
     title: 'Access Valuable Resources',
@@ -33,7 +33,7 @@ const slides: SlideData[] = [
     description:
       'Gain access to exclusive tutorials, tools, and guides that will empower you in your cybersecurity journey.',
     accent: '#C9C73C',
-    imageUrl: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900&h=1200&fit=crop&q=80',
+    imageUrl: '/images/re1.jpg',
   },
 ];
 

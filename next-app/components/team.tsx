@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from 'next/image';
 import { Spectral } from 'next/font/google';
 import { Marquee } from "@/components/ui/marquee";
 
